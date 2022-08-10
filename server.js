@@ -61,21 +61,20 @@ app.post("/customer/add",(req,res)=>{
 app.get("/", (req, res)=> {
     
     customerModal.find().then((cust)=>{
-        for(let i=0;i<cust.length;i++){
             inventoryModal.find().then((inv)=>{
-                orderModal.create({customer_id:cust[i].customer_id,
-                inventory_id:inv[i].inventory_id,
-                item_name:inv[i].item_name,
-                quantity:inv[i].available_quantity
-            }).then((order)=>{
-                console.log(order)
-                orderModal.find().then((order)=>{
-                    console.log(order)
-                    res.render("order",{order})
+            for(let i=0;i<inv.length;i++){
+                    orderModal.create({customer_id:cust[i].customer_id,
+                    inventory_id:inv[i].inventory_id,
+                    item_name:inv[i].item_name,
+                    quantity:inv[i].available_quantity
+                }).then(()=>{
+                    orderModal.find().then((order)=>{
+                        console.log(order)
+                        res.render("order",{order})
+                    })
                 })
-            })
-            })
-        }
+            }  })
+        
     })
 })
 app.post("/order/add",(req,res)=>{
