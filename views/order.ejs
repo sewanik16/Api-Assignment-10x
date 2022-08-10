@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        <div>
+            <h1>Order</h1>
+            
+            <table style="border:1px solid red;padding: 10px;text-align: center;">
+                <tr>
+                    <td style="border:1px solid red;padding: 10px;">Customer_Id</td>
+                    <td style="border:1px solid red;padding: 10px;">Inventory_Id</td>
+                    <td style="border:1px solid red;padding: 10px;">Item_Name</td>
+                    <td style="border:1px solid red;padding: 10px;">Quantity</td>
+                </tr>
+                <% for(let ele of order) { %>
+                <tr >
+                    <td><%= ele.customer_id %></td>
+                    <td><%= ele.inventory_id %></td>
+                    <td><%= ele.item_name %></td>
+                    <td><%= ele.quantity %></td>
+                </tr>
+                <% } %>
+            </table>
+           <button onclick="order()">Order</button>
+        </div>
+    </body>
+    <script>
+      function order(){
+            
+        }
+    </script>
+</html>

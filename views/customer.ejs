@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <div>
+            <h1>Customer</h1>
+            
+            <table style="border:1px solid red;padding: 10px;text-align: center;">
+                <tr>
+                    <td style="border:1px solid red;padding: 10px;">Customer_Id</td>
+                    <td style="border:1px solid red;padding: 10px;">Customer_Name</td>
+                    <td style="border:1px solid red;padding: 10px;">Email</td>
+                </tr>
+                <% for(let ele of customer) { %>
+                <tr >
+                    <td><%= ele.customer_id%></td>
+                    <td><%= ele.customer_name %></td>
+                    <td><%= ele.email%></td>
+                </tr>
+                <% } %>
+            </table>
+           
+        </div>
+    </body>
+</html>
